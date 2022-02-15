@@ -1,0 +1,22 @@
+name: clipboard_plugin_example
+description: Demonstrates how to use the clipboard_plugin plugin.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: ">=2.16.0-134.5.beta <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  clipboard:
+    path: ../
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

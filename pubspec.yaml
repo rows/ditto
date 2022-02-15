@@ -1,0 +1,28 @@
+name: clipboard
+description: A plugin to work with clipboard.
+version: 0.0.1
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.16.0-134.5.beta <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  clipboard_api:
+    path: ./packages/clipboard_api
+  clipboard_windows:
+    path: ./packages/clipboard_windows
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  dart_lint_template:
+    path: ../dart_lint_template
+
+flutter:
+  plugin:
+    platforms:
+      windows:
+        default_package: clipboard_windows
