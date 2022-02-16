@@ -12,16 +12,16 @@ abstract class Clipboard {
   /// Checks if the current clipboard content supports the given [type].
   Future<bool> hasDataType(ClipboardDataType type);
 
-  /// Gets the current clipboard content.
-  /// Returns an empty string if [dataType] is not supported in the current
-  /// clipboard data.
-  Future<String?> getClipboardData(ClipboardDataType dataType);
-
   /// Writes content to the clipboard in the specified [dataType].
   Future<void> setClipboard(ClipboardDataType dataType, String content);
 
   /// Writes clipboard content for all given data types.
   Future<void> setClipboardData(Map<ClipboardDataType, String> data);
+
+  /// Gets the current clipboard content.
+  /// Returns an empty string if [dataType] is not supported in the current
+  /// clipboard data.
+  Future<String?> getClipboardData(ClipboardDataType dataType);
 
   /// Gets the current clipboard raw content.
   /// Returns the clipboard content for a given type without any data

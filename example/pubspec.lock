@@ -43,6 +43,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  clipboard_macos:
+    dependency: transitive
+    description:
+      path: "../packages/clipboard_macos"
+      relative: true
+    source: path
+    version: "0.0.1"
   clipboard_windows:
     dependency: transitive
     description:

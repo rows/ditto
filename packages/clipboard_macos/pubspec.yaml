@@ -1,0 +1,29 @@
+name: clipboard_macos
+description: Clipboard implementation for macOS
+version: 0.0.1
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  clipboard_api:
+    path: ../clipboard_api
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  dart_lint_template:
+    path: ../../../dart_lint_template
+
+flutter:
+  plugin:
+    implements: clipboard
+    platforms:
+      macos:
+        dartPluginClass: MacosClipboard
+        pluginClass: ClipboardMacosPlugin

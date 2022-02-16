@@ -12,6 +12,8 @@ dependencies:
     path: ./packages/clipboard_api
   clipboard_windows:
     path: ./packages/clipboard_windows
+  clipboard_macos:
+    path: ./packages/clipboard_macos
   flutter:
     sdk: flutter
 
@@ -26,3 +28,5 @@ flutter:
     platforms:
       windows:
         default_package: clipboard_windows
+      macos:
+        default_package: clipboard_macos
