@@ -117,7 +117,7 @@ void main() {
         setMockMethodCallHandler((MethodCall methodCall) async {
           if (methodCall.method == 'getClipboardData') {
             methodChannelArguments =
-            methodCall.arguments as Map<dynamic, dynamic>?;
+                methodCall.arguments as Map<dynamic, dynamic>?;
             return '';
           }
         });
@@ -134,7 +134,7 @@ void main() {
         setMockMethodCallHandler((MethodCall methodCall) async {
           if (methodCall.method == 'getClipboardData') {
             methodChannelArguments =
-            methodCall.arguments as Map<dynamic, dynamic>?;
+                methodCall.arguments as Map<dynamic, dynamic>?;
             return '';
           }
         });
