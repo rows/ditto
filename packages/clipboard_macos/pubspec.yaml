@@ -15,10 +15,9 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  rows_lint: 0.1.0
   flutter_test:
     sdk: flutter
-  dart_lint_template:
-    path: ../../../dart_lint_template
 
 flutter:
   plugin:

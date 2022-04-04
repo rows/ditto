@@ -8,7 +8,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  rows_lint: 0.1.0
   flutter:
     sdk: flutter
-  dart_lint_template:
-    path: ../../../dart_lint_template

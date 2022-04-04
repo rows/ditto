@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
                         .map(
                           (value) => DropdownMenuItem(
                             value: value,
-                            child: Text("$value"),
+                            child: Text('$value'),
                           ),
                         )
                         .toList(),
