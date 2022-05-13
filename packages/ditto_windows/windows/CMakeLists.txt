@@ -4,7 +4,7 @@ project(${PROJECT_NAME} LANGUAGES CXX)
 
 # This value is used when generating builds using this plugin, so it must
 # not be changed
-set(PLUGIN_NAME "clipboard_windows_plugin")
+set(PLUGIN_NAME "ditto_windows_plugin")
 
 add_library(${PLUGIN_NAME} SHARED
   "clipboard_plugin.cpp"
