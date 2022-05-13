@@ -4,9 +4,9 @@ import 'package:flutter/services.dart' hide Clipboard;
 const _methodChannel = MethodChannel('clipboard_macos');
 
 /// macOS implementation of the [Clipboard] api.
-class MacosClipboard extends Clipboard {
+class MacosClipboard extends Ditto {
   static void registerWith() {
-    Clipboard.instance = MacosClipboard();
+    Ditto.instance = MacosClipboard();
   }
 
   @override

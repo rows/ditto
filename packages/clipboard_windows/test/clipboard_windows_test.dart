@@ -41,7 +41,7 @@ void main() {
 
   group('Windows Clipboard', () {
     test('creates html fragment', () async {
-      await Clipboard.instance.setClipboard(
+      await Ditto.instance.setClipboard(
         ClipboardDataType.html,
         htmlFragment,
       );
@@ -57,7 +57,7 @@ void main() {
 
     test('set clipboard text data', () async {
       const text = 'some content to paste';
-      await Clipboard.instance.setClipboard(ClipboardDataType.text, text);
+      await Ditto.instance.setClipboard(ClipboardDataType.text, text);
 
       expect(channelCallLog, hasLength(1));
       final call = channelCallLog.first;
@@ -70,7 +70,7 @@ void main() {
 
     test('set clipboard data', () async {
       const text = 'this is the expected original text';
-      await Clipboard.instance.setClipboardData({
+      await Ditto.instance.setClipboardData({
         ClipboardDataType.text: text,
         ClipboardDataType.html: htmlFragment,
       });
@@ -95,7 +95,7 @@ void main() {
         return expectedHtml;
       });
 
-      final content = await Clipboard.instance.getClipboardData(
+      final content = await Ditto.instance.getClipboardData(
         ClipboardDataType.html,
       );
       expect(channelCallLog, hasLength(1));
@@ -115,7 +115,7 @@ void main() {
         return text;
       });
 
-      final content = await Clipboard.instance.getClipboardData(
+      final content = await Ditto.instance.getClipboardData(
         ClipboardDataType.html,
       );
       expect(channelCallLog, hasLength(1));
@@ -134,7 +134,7 @@ void main() {
         return expectedHtml;
       });
 
-      final content = await Clipboard.instance.getClipboardRawData(
+      final content = await Ditto.instance.getClipboardRawData(
         ClipboardDataType.html,
       );
       expect(channelCallLog, hasLength(1));

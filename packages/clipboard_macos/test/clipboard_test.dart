@@ -22,7 +22,7 @@ void main() {
     group('registration', () {
       test('registerWith registers on clipboard', () async {
         MacosClipboard.registerWith();
-        final clipboardInstance = Clipboard.instance;
+        final clipboardInstance = Ditto.instance;
         expect(clipboardInstance, const TypeMatcher<MacosClipboard>());
       });
     });

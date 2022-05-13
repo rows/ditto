@@ -3,11 +3,11 @@ import 'dart:async';
 enum ClipboardDataType { text, html }
 
 /// A class to interact with the clipboard supporting multiple data formats.
-/// Use [Clipboard.instance] to interact with the system's clipboard.
-abstract class Clipboard {
+/// Use [Ditto.instance] to interact with the system's clipboard.
+abstract class Ditto {
   /// Platform-specific plugins should set this with their own platform-specific
   /// class that extends [Clipboard] when they register themselves.
-  static Clipboard instance = _UnsupportedPlatformClipboard();
+  static Ditto instance = _UnsupportedPlatformClipboard();
 
   /// Checks if the current clipboard content supports the given [type].
   Future<bool> hasDataType(ClipboardDataType type);
@@ -42,7 +42,7 @@ abstract class Clipboard {
 
 /// Empty clipboard implementation that throws an exception for unsupported
 /// platforms.
-class _UnsupportedPlatformClipboard extends Clipboard {
+class _UnsupportedPlatformClipboard extends Ditto {
   @override
   Future<String?> getClipboardData(ClipboardDataType dataType) {
     throw UnimplementedError(

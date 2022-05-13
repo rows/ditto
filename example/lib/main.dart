@@ -90,23 +90,23 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future _paste() async {
-    final data = await Clipboard.instance.getClipboardData(_clipboardDataType);
+    final data = await Ditto.instance.getClipboardData(_clipboardDataType);
     _textEditingController.text = data!;
   }
 
   Future _pasteRaw() async {
-    final data = await Clipboard.instance.getClipboardRawData(
+    final data = await Ditto.instance.getClipboardRawData(
       _clipboardDataType,
     );
     _textEditingController.text = data!;
   }
 
-  Future _copy() => Clipboard.instance.setClipboard(
+  Future _copy() => Ditto.instance.setClipboard(
         _clipboardDataType,
         _textEditingController.text,
       );
 
-  Future _copyAllFormats() => Clipboard.instance.setClipboardData({
+  Future _copyAllFormats() => Ditto.instance.setClipboardData({
         for (var type in ClipboardDataType.values)
           type: _textEditingController.text
       });

@@ -4,13 +4,13 @@ import 'package:clipboard_api/clipboard.dart';
 import 'package:flutter/services.dart' hide Clipboard;
 
 /// Windows implementation of [Clipboard]
-class WindowsClipboard extends Clipboard with Throttle {
+class WindowsClipboard extends Ditto with Throttle {
   static const MethodChannel _channel = MethodChannel('clipboard_plugin');
   static const _startFragmentTag = '<!--StartFragment-->';
   static const _endFragmentTag = '<!--EndFragment-->';
 
   static void registerWith() {
-    Clipboard.instance = WindowsClipboard();
+    Ditto.instance = WindowsClipboard();
   }
 
   @override
