@@ -25,5 +25,5 @@
 
 A Flutter plugin to work with HTML clipboard format on Windwos and MacOS.
 
-Refer to the [plugin's main page](/packages/clipboard_api/README.md) for more info.
+Refer to the [plugin's main page](/packages/ditto/README.md) for more info.
 
