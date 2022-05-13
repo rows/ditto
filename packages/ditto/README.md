@@ -25,10 +25,12 @@
 
 A plugin to work with HTML clipboard format on Windwos and MacOS.
 
+On other platforms it falls back to default Flutter text clipboard.
+
 
 ### Usage
 
-The `Clipboard` class has a `instance` method to interact with the plugin.
+The `Ditto` class has a `instance` method to interact with the plugin.
 
 Here is a quick example of writing and reading the HTML clipboard:
 
@@ -38,9 +40,9 @@ import 'package:ditto/ditto.dart';
 // ...
 final html = myHtmlContent();
 
-await Clipboard.instance.setClipboard(ClipboardDataType.html, html);
-final content = await Clipboard.instance.getClipboardData(ClipboardDataType.html);
+await Ditto.instance.setClipboard(ClipboardDataType.html, html);
+final content = await Ditto.instance.getClipboardData(ClipboardDataType.html);
 
 ```
 
-Refer to the `Clipboard` class to check other usefull methods to manage the clipboard.
+Refer to the `Ditto` class to check other usefull methods to manage the clipboard.

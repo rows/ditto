@@ -1,13 +1,15 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart';
+
 enum ClipboardDataType { text, html }
 
 /// A class to interact with the clipboard supporting multiple data formats.
 /// Use [Ditto.instance] to interact with the system's clipboard.
 abstract class Ditto {
   /// Platform-specific plugins should set this with their own platform-specific
-  /// class that extends [Clipboard] when they register themselves.
-  static Ditto instance = _UnsupportedPlatformClipboard();
+  /// class that extends [Ditto] when they register themselves.
+  static Ditto instance = _FallbackPlatformClipboard();
 
   /// Checks if the current clipboard content supports the given [type].
   Future<bool> hasDataType(ClipboardDataType type);
@@ -40,41 +42,28 @@ abstract class Ditto {
   Future<String?> get clipboardHtml => getClipboardData(ClipboardDataType.html);
 }
 
-/// Empty clipboard implementation that throws an exception for unsupported
-/// platforms.
-class _UnsupportedPlatformClipboard extends Ditto {
+/// A Ditto implementation for platforms where the plugin is not available.
+/// Falls back to Flutter default clipboard implementation.
+class _FallbackPlatformClipboard extends Ditto {
   @override
-  Future<String?> getClipboardData(ClipboardDataType dataType) {
-    throw UnimplementedError(
-      'Clipboard plugin not implemented in this platform.',
-    );
+  Future<String?> getClipboardData(ClipboardDataType dataType) async {
+    final data = await Clipboard.getData(Clipboard.kTextPlain);
+    return data?.text;
   }
 
   @override
-  Future<bool> hasDataType(ClipboardDataType type) {
-    throw UnimplementedError(
-      'Clipboard plugin not implemented in this platform.',
-    );
-  }
+  Future<bool> hasDataType(ClipboardDataType type) =>
+      Future.value(type == ClipboardDataType.text);
 
   @override
-  Future<void> setClipboard(ClipboardDataType dataType, String content) {
-    throw UnimplementedError(
-      'Clipboard plugin not implemented in this platform.',
-    );
-  }
+  Future<void> setClipboard(ClipboardDataType dataType, String content) =>
+      Clipboard.setData(ClipboardData(text: content));
 
   @override
-  Future<void> setClipboardData(Map<ClipboardDataType, String> data) {
-    throw UnimplementedError(
-      'Clipboard plugin not implemented in this platform.',
-    );
-  }
+  Future<void> setClipboardData(Map<ClipboardDataType, String> data) =>
+      Clipboard.setData(ClipboardData(text: data.values.first));
 
   @override
-  Future<String?> getClipboardRawData(ClipboardDataType dataType) {
-    throw UnimplementedError(
-      'Clipboard plugin not implemented in this platform.',
-    );
-  }
+  Future<String?> getClipboardRawData(ClipboardDataType dataType) =>
+      getClipboardData(dataType);
 }
