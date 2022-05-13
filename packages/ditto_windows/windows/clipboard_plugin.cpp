@@ -1,6 +1,6 @@
-#include "include/clipboard_windows/clipboard_plugin.h"
-#include "include/clipboard_windows/raii_clipboard.h"
-#include "include/clipboard_windows/encoding.h"
+#include "include/ditto_windows/clipboard_plugin.h"
+#include "include/ditto_windows/raii_clipboard.h"
+#include "include/ditto_windows/encoding.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>
