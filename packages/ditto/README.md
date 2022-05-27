@@ -17,7 +17,7 @@
 
 ## Ditto
 
-A plugin to work with HTML clipboard format on Windwos and MacOS.
+A plugin to work with HTML clipboard format on Windows and MacOS.
 
 On other platforms it falls back to default Flutter text clipboard.
 
