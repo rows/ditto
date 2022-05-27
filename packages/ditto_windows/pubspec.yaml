@@ -1,0 +1,28 @@
+name: ditto_windows
+description: Ditto clipboard plugin implementation for Windows
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  ditto_interface:
+    path: ../ditto_interface
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  rows_lint: 0.1.1
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    implements: ditto
+    platforms:
+      windows:
+        dartPluginClass: WindowsClipboard
+        pluginClass: ClipboardPlugin
